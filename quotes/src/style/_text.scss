@@ -1,0 +1,13 @@
+p {
+  @apply text-lg font-bold text-blue-900;
+}
+span {
+  @apply text-sm text-blue-900/80;
+}
+#root {
+  width:100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

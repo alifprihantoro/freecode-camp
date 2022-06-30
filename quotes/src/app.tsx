@@ -40,18 +40,22 @@ function App() {
         ) : (
           <>
             <QuoteAuthor quote={quote} author={auth_quote} />
-            <button
-              id="new-quote"
-              onClick={function (e) {
-                e.preventDefault()
-                const get_data = data[randomNum()]
-                upQuote(get_data.quote)
-                up_auth_Quote(get_data.author)
-              }}
-            >
-              New Quote
-            </button>
-            <Twitter quote={quote} />
+            <br />
+            <div className="myBtn">
+              <Twitter quote={quote} />
+              <a
+                id="new-quote"
+                className="btn irefres"
+                onClick={function (e) {
+                  e.preventDefault()
+                  const get_data = data[randomNum()]
+                  upQuote(get_data.quote)
+                  up_auth_Quote(get_data.author)
+                }}
+              >
+                New Quote
+              </a>
+            </div>
           </>
         )}
       </div>

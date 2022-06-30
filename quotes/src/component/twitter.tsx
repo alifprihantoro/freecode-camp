@@ -9,10 +9,8 @@ export default function Twitter(prop: Prop) {
     prop.quote +
     '"'
   return (
-    <div className="btn">
-      <a className="btn" id="tweet-quote" target="_blank" href={link}>
-        <i className="delete"></i>
-      </a>
-    </div>
+    <a className="btn itwit" id="tweet-quote" target="_blank" href={link}>
+      share on tweet
+    </a>
   )
 }
