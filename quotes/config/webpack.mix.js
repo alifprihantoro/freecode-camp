@@ -3,7 +3,7 @@ const tailwindcss = require('tailwindcss')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 mix
-  .sass('quotes/src/style/main.scss', 'quotes/public/main.css', {}, [
+  .sass('quotes/src/style/main.scss', 'quotes/public/style.css', {}, [
     tailwindcss('./quotes/config/tailwind.config.js'),
   ])
   .options({

@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    './src/app.tsx',
+    'quotes/src/**/*.tsx',
   ],
   theme: {
     extend: {

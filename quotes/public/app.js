@@ -10,6 +10,46 @@
 
 
 
+var __createBinding = this && this.__createBinding || (Object.create ? function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  var desc = Object.getOwnPropertyDescriptor(m, k);
+
+  if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+    desc = {
+      enumerable: true,
+      get: function get() {
+        return m[k];
+      }
+    };
+  }
+
+  Object.defineProperty(o, k2, desc);
+} : function (o, m, k, k2) {
+  if (k2 === undefined) k2 = k;
+  o[k2] = m[k];
+});
+
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function (o, v) {
+  Object.defineProperty(o, "default", {
+    enumerable: true,
+    value: v
+  });
+} : function (o, v) {
+  o["default"] = v;
+});
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+  }
+
+  __setModuleDefault(result, mod);
+
+  return result;
+};
+
 var __importDefault = this && this.__importDefault || function (mod) {
   return mod && mod.__esModule ? mod : {
     "default": mod
@@ -20,24 +60,35 @@ Object.defineProperty(exports, "__esModule", ({
   value: true
 }));
 
-var header_1 = __importDefault(__webpack_require__(/*! @comp/header */ "./quotes/src/component/header.tsx"));
+var btn_new_1 = __importDefault(__webpack_require__(/*! @comp/btn-new */ "./quotes/src/component/btn-new.tsx"));
 
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var quote_author_1 = __importDefault(__webpack_require__(/*! @comp/quote-author */ "./quotes/src/component/quote-author.tsx"));
 
-var react_dom_1 = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+var quote_txt_1 = __importDefault(__webpack_require__(/*! @comp/quote-txt */ "./quotes/src/component/quote-txt.tsx"));
+
+var twitter_1 = __importDefault(__webpack_require__(/*! @comp/twitter */ "./quotes/src/component/twitter.tsx"));
+
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var client_1 = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 
 function App() {
-  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement(header_1["default"], null), react_1["default"].createElement("p", null, "ipsum dolor sit amet consectetur adipisicing elit. Repellendus odit pariatur beatae quibusdam facilis exercitationem. Fuga eum facere commodi ipsa cum maxime ipsam dolore recusandae possimus dicta! Qui, accusamus ipsa."));
+  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement("div", {
+    id: "quote-box"
+  }, react_1["default"].createElement(quote_txt_1["default"], null), react_1["default"].createElement(quote_author_1["default"], null), react_1["default"].createElement(twitter_1["default"], null), react_1["default"].createElement(btn_new_1["default"], null)));
 }
 
-(0, react_dom_1.render)(react_1["default"].createElement(App, null), document.getElementById("root"));
+var container = document.getElementById('root');
+var root = (0, client_1.createRoot)(container); // createRoot(container!) if you use TypeScript
+
+root.render(react_1["default"].createElement(react_1.StrictMode, null, react_1["default"].createElement(App, null)));
 
 /***/ }),
 
-/***/ "./quotes/src/component/header.tsx":
-/*!*****************************************!*\
-  !*** ./quotes/src/component/header.tsx ***!
-  \*****************************************/
+/***/ "./quotes/src/component/btn-new.tsx":
+/*!******************************************!*\
+  !*** ./quotes/src/component/btn-new.tsx ***!
+  \******************************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 
@@ -54,11 +105,117 @@ Object.defineProperty(exports, "__esModule", ({
 
 var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
-function Header() {
-  return react_1["default"].createElement(react_1["default"].Fragment, null, react_1["default"].createElement("header", null, react_1["default"].createElement("h1", null, "Alief Prihantoro")));
+function BtnNew() {
+  return react_1["default"].createElement("button", {
+    className: "button",
+    id: "new-quote"
+  }, "New quote");
 }
 
-exports["default"] = Header;
+exports["default"] = BtnNew;
+
+/***/ }),
+
+/***/ "./quotes/src/component/quote-author.tsx":
+/*!***********************************************!*\
+  !*** ./quotes/src/component/quote-author.tsx ***!
+  \***********************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+function QuoteAuthor() {
+  return react_1["default"].createElement("div", {
+    className: "quote-author"
+  }, "- ", react_1["default"].createElement("span", {
+    id: "author"
+  }));
+}
+
+exports["default"] = QuoteAuthor;
+
+/***/ }),
+
+/***/ "./quotes/src/component/quote-txt.tsx":
+/*!********************************************!*\
+  !*** ./quotes/src/component/quote-txt.tsx ***!
+  \********************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+function QuoteTxt() {
+  return react_1["default"].createElement("div", {
+    className: "quote-text"
+  }, react_1["default"].createElement("i", {
+    className: "fa fa-quote-left"
+  }, " "), react_1["default"].createElement("span", {
+    id: "text"
+  }));
+}
+
+exports["default"] = QuoteTxt;
+
+/***/ }),
+
+/***/ "./quotes/src/component/twitter.tsx":
+/*!******************************************!*\
+  !*** ./quotes/src/component/twitter.tsx ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+function Twitter() {
+  return react_1["default"].createElement("div", {
+    className: "btn"
+  }, react_1["default"].createElement("a", {
+    className: "btn",
+    id: "tweet-share",
+    title: "Tweet this quote!",
+    target: "_top"
+  }, react_1["default"].createElement("i", {
+    className: "fa fa-twitter"
+  })));
+}
+
+exports["default"] = Twitter;
 
 /***/ }),
 
@@ -29947,6 +30104,38 @@ if (
 
 /***/ }),
 
+/***/ "./node_modules/react-dom/client.js":
+/*!******************************************!*\
+  !*** ./node_modules/react-dom/client.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+var m = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+if (false) {} else {
+  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+  exports.createRoot = function(c, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.createRoot(c, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+  exports.hydrateRoot = function(c, h, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.hydrateRoot(c, h, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/react-dom/index.js":
 /*!*****************************************!*\
   !*** ./node_modules/react-dom/index.js ***!
@@ -33513,7 +33702,7 @@ if (false) {} else {
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/quotes/public/app": 0,
-/******/ 			"quotes/public/main": 0
+/******/ 			"quotes/public/style": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -33563,8 +33752,8 @@ if (false) {} else {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["quotes/public/main"], () => (__webpack_require__("./quotes/src/app.tsx")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["quotes/public/main"], () => (__webpack_require__("./quotes/src/style/main.scss")))
+/******/ 	__webpack_require__.O(undefined, ["quotes/public/style"], () => (__webpack_require__("./quotes/src/app.tsx")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["quotes/public/style"], () => (__webpack_require__("./quotes/src/style/main.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
