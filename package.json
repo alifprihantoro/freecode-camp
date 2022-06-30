@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "mix watch",
+    "quoted": "npx mix --mix-config=quotes/config/webpack.mix.js watch",
     "prod": "mix --production"
   },
   "devDependencies": {

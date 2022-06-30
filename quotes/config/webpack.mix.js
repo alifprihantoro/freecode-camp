@@ -3,27 +3,17 @@ const tailwindcss = require('tailwindcss')
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 mix
-  .sass('./src/style/main.scss', 'public/main.css', {}, [
-    tailwindcss('./tailwind.config.js'),
+  .sass('quotes/src/style/main.scss', 'quotes/public/main.css', {}, [
+    tailwindcss('./quotes/config/tailwind.config.js'),
   ])
   .options({
     processCssUrls: false,
   })
-  .ts('src/app.tsx', 'public')
+  .ts('quotes/src/app.tsx', 'quotes/public')
   .react()
   .webpackConfig({
-    module: {
-      rules: [
-        {
-          test: /\.tsx?$/,
-          loader: 'ts-loader',
-          exclude: /node_modules/,
-        },
-      ],
-    },
     resolve: {
       plugins: [new TsconfigPathsPlugin()],
-      extensions: ['.ts', '.js'],
       extensions: ['*', '.js', '.jsx', '.vue', '.ts', '.tsx'],
     },
   })

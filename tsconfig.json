@@ -3,7 +3,7 @@
     "jsx": "react",
     "baseUrl": ".",
     "paths": {
-      "@comp/*": ["./src/component/*"]
+      "@comp/*": ["./quotes/src/component/*"]
     },
     /* Visit https://aka.ms/tsconfig to read more about this file */
 
