@@ -1,9 +1,14 @@
-import React from "react";
+import React from 'react'
 
-export default function QuoteAuthor() {
+interface data {
+  quote: string
+  author: string
+}
+export default function QuoteAuthor(prop: data) {
   return (
-    <div className="quote-author">
-      - <span id="author"></span>
-    </div>
+    <>
+      <p id="text">{prop.quote}</p>
+      <span id="author">- {prop.author}</span>
+    </>
   )
 }
