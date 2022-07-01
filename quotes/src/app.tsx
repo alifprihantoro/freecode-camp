@@ -1,6 +1,5 @@
-import BtnNew from '@comp/btn-new'
-import QuoteAuthor from '@comp/quote-author'
-import QuoteTxt from '@comp/quote-txt'
+import Footer from '@comp/footer'
+import Quote from '@comp/quote'
 import Twitter from '@comp/twitter'
 import React, { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
@@ -18,35 +17,36 @@ function App() {
   const randomNum = (): number => Math.floor(Math.random() * 11)
   const url =
     'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json'
+  // get from api
   React.useEffect(() => {
     async function getData() {
       const request = await fetch(url)
       const response = await request.json()
       add_data(response.quotes)
-      const get_data = response.quotes[randomNum()]
-      upQuote(get_data.quote)
-      up_auth_Quote(get_data.author)
+      // save array data to variable
+      const get_res = response.quotes[randomNum()]
+      // update quotes first if finish get api
+      upQuote(get_res.quote)
+      up_auth_Quote(get_res.author)
       noLoading(true)
     }
     getData()
   }, [])
-
   return (
     <>
       <div id="quote-box">
-        <QuoteTxt />
         {!loading ? (
           <p>loading...</p>
         ) : (
           <>
-            <QuoteAuthor quote={quote} author={auth_quote} />
+            <Quote quote={quote} author={auth_quote} />
             <br />
             <div className="myBtn">
               <Twitter quote={quote} />
               <a
                 id="new-quote"
                 className="btn irefres"
-                onClick={function (e) {
+                onClick={(e) => {
                   e.preventDefault()
                   const get_data = data[randomNum()]
                   upQuote(get_data.quote)
@@ -58,6 +58,7 @@ function App() {
             </div>
           </>
         )}
+      <Footer/>
       </div>
     </>
   )

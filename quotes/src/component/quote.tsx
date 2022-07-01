@@ -4,7 +4,7 @@ interface data {
   quote: string
   author: string
 }
-export default function QuoteAuthor(prop: data) {
+export default function Quote(prop: data) {
   return (
     <>
       <p id="text">"{prop.quote}"</p>

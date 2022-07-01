@@ -5,9 +5,5 @@ span {
   @apply text-sm text-blue-900/80;
 }
 #root {
-  width:100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @apply w-full h-screen flex justify-center content-center; 
 }
