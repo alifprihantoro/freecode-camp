@@ -1,0 +1,9 @@
+@use './var' as *;
+ h2.title {
+  border: 5px solid;
+  @apply bg-blue-800 text-lg leading-[0] rounded-xl w-full text-center my-8 border-blue-800;
+  // heading sidebar
+  span {
+    @apply bg-blue-800 p-2 rounded-xl text-white uppercase font-bold;
+  }
+}

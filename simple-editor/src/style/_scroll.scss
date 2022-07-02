@@ -1,0 +1,24 @@
+// scroll ---------
+html {
+  scroll-behavior: smooth;
+}
+::selection {
+  @apply bg-blue-900 text-white;
+}
+/* width */
+::-webkit-scrollbar {
+  @apply w-[10px];
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-blue-100;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-500 rounded;
+  &:hover {
+    @apply bg-blue-900;
+  }
+}

@@ -1,0 +1,12 @@
+nav {
+  @apply flex w-full;
+  *{
+    list-style-type: none;
+  }
+  li a {
+    @apply p-2 m-2 bg-blue-900 text-white uppercase leading-10 rounded-xl text-sm;
+    &:hover{
+      box-shadow: 0 0 10px theme('colors.blue.500');
+    }
+  }
+}

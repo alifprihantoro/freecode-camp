@@ -7,7 +7,7 @@ import Nav from './component/nav'
 function App() {
   return (
     <>
-      <h1>Simple Text Editor</h1>
+      <h1 className="bg-blue-900 text-center p-3 text-white font-bold uppercase m-0 ">Simple Text Editor</h1>
       <Nav />
       <Routes>
         <Route path="/" element={<Home result={true} edit={true}/>} />
