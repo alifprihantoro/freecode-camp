@@ -19,7 +19,7 @@ export default function Home(props: props) {
     <div className="cover">
       {props.edit && (
         <>
-          <div>edit</div>
+          <h2>editor</h2>
           <textarea
             className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
             value={value}
@@ -29,7 +29,11 @@ export default function Home(props: props) {
           ></textarea>
         </>
       )}
-      {props.result && <div className="bg-purple-900">result : {result}</div>}
+      {props.result && (
+        <div className="result">
+          <h2>result :</h2> {result}
+        </div>
+      )}
     </div>
   )
 }

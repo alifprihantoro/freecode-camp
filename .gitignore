@@ -107,5 +107,5 @@ dist
 mix-manifest.json
 
 # output
-quotes/public/style.css
-quotes/public/app.js*
+*/public/style.css
+*/public/app.js*
