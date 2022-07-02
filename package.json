@@ -12,6 +12,8 @@
     "quotedprod": "npx mix --mix-config=quotes/config/webpack.mix.js --production",
     "editor": "npx mix --mix-config=simple-editor/config/webpack.mix.js watch",
     "editorprod": "npx mix --mix-config=simple-editor/config/webpack.mix.js --production",
+    "drum": "npx mix --mix-config=drum/config/webpack.mix.js watch",
+    "drumprod": "npx mix --mix-config=drum/config/webpack.mix.js --production",
     "prod": "mix --production"
   },
   "devDependencies": {
