@@ -8,7 +8,8 @@ const root = createRoot(container!) // createRoot(container!) if you use TypeScr
 // if keydown
 keydown()
 root.render(
-  <StrictMode>
-    <Home />
-  </StrictMode>
+    <StrictMode>
+      <Home />
+    </StrictMode>
+
 )

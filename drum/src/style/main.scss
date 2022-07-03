@@ -2,3 +2,15 @@
 .klicked {
   @apply bg-blue-100
 }
+.drum-pad{
+  transition-duration: .5s;
+}
+#root{
+  @apply max-w-[720px] m-auto bg-blue-900/10;
+}
+.btn{
+  @apply bg-blue-700 w-fit h-[50px] rounded p-3 text-white;
+}
+h1{
+  @apply bg-blue-900/20 w-full h-[50px] rounded p-3 text-blue-900 font-bold uppercase text-center ;
+}
