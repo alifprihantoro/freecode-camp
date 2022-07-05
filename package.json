@@ -16,6 +16,7 @@
     "drumprod": "npx mix --mix-config=drum/config/webpack.mix.js --production",
     "calculator": "npx mix --mix-config=calculator/config/webpack.mix.js watch",
     "calculatorprod": "npx mix --mix-config=calculator/config/webpack.mix.js --production",
+    "timer": "npx mix --mix-config=timer/config/webpack.mix.js watch",
     "prod": "mix --production"
   },
   "devDependencies": {
