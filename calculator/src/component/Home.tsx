@@ -86,8 +86,8 @@ export default function Home() {
       (ops.includes(val) && calc === '') ||
       (ops.includes(val) && ops.includes(calc.slice(-1)))
     ) {
-      if (ops.includes(calc.slice(-2,-1)) && val === '+') {
-        setCalc(calc.slice(0,-2)+val)
+      if (ops.includes(calc.slice(-2, -1)) && val === '+') {
+        setCalc(calc.slice(0, -2) + val)
         return
       }
       // if (
@@ -174,54 +174,59 @@ export default function Home() {
     setIsEqual(true)
   }
   return (
-    <div className="app">
+    <div className="app w-fit m-auto bg-blue-900/10 p-3 ">
       <div className="calculator">
-        <div className="display">
+        <div className="display bg-blue-900/50 p-3 text-right font-bold uppercase text-white">
           {calc || 0}
           <div id="display">{result || 0}</div>
         </div>
-        <div className="operator">
-          <button id="divide" onClick={() => upCalc('/')}>
-            /
-          </button>
-          <button id="multiply" onClick={() => upCalc('*')}>
-            *
-          </button>
-          <button id="add" onClick={() => upCalc('+')}>
-            +
-          </button>
-          <button id="subtract" onClick={() => upCalc('-')}>
-            -
-          </button>
-          <button onClick={delLast}>delete</button>
-          <button
-            id="clear"
-            onClick={() => {
-              setResult('')
-              setCalc('')
-              setIsDecimal(false)
-            }}
-          >
-            clear
-          </button>
+        <div className="flex">
+          <div className="digit w-[12.5rem] p-0">
+            {createDigit()}
+            <button id="zero" onClick={() => upCalc('0')}>
+              0
+            </button>
+            <button id="decimal" onClick={() => upCalc('.')}>
+              .
+            </button>
+          </div>
+          <div className="operator w-[12.5rem]">
+            <button id="divide" onClick={() => upCalc('/')}>
+              /
+            </button>
+            <button id="multiply" onClick={() => upCalc('*')}>
+              *
+            </button>
+            <button id="add" onClick={() => upCalc('+')}>
+              +
+            </button>
+            <button id="subtract" onClick={() => upCalc('-')}>
+              -
+            </button>
+            <button onClick={delLast}>delete</button>
+            <button
+              id="clear"
+              onClick={() => {
+                setResult('')
+                setCalc('')
+                setIsDecimal(false)
+              }}
+            >
+              clear
+            </button>
+            <button id="equals" onClick={calculate}>
+              =
+            </button>
+          </div>{' '}
         </div>
-        <div className="digit">
-          {createDigit()}
-          <button id="zero" onClick={() => upCalc('0')}>
-            0
-          </button>
-          <button id="decimal" onClick={() => upCalc('.')}>
-            .
-          </button>
-        </div>
-        <button id="equals" onClick={calculate}>
-          =
-        </button>
       </div>
       <div>
-        History :
+        <h2 className="font-bold text-center text-blue-900 my-3">History :</h2>
         {cek.map((e) => (
-          <ul key={e.calc}>
+          <ul
+            key={e.calc}
+            className="bg-blue-900/50 p-3 rounded m-3 text-white uppercase font-bold"
+          >
             <li>rumus : {e.calc}</li>
             <li>hasil : {e.result}</li>
           </ul>

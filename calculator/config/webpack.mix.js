@@ -13,7 +13,6 @@ mix
   .ts(PATH + '/src/app.tsx', PATH + '/public')
   .react()
   .webpackConfig({
-     mode: 'production',
     resolve: {
       plugins: [new TsconfigPathsPlugin()],
       extensions: ['*', '.js', '.jsx', '.vue', '.ts', '.tsx'],
